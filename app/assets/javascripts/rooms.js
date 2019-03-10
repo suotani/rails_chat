@@ -1,2 +1,9 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+document.addEventListener('DOMContentLoaded', function(){
+    input = document.getElementById("chat-input");
+    button = document.getElementById("button");
+    button.addEventListener('click', function(){
+        content = input.value;
+        App.room.speak(content);
+        input.value = '';
+    })
+});

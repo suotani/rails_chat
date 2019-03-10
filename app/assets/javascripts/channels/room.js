@@ -8,10 +8,12 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
   },
 
   received: function(data) {
+    alert(data);
     // Called when there's incoming data on the websocket for this channel
   },
 
-  speak: function() {
-    return this.perform('speak');
+  speak: function(content) {
+    // これを実行すると、room_channel.rb#speakが実行される
+    return this.perform('speak',{message: content}); 
   }
 });
